@@ -89,6 +89,8 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 WSGI_APPLICATION = 'tweeter.wsgi.application'
 
 
