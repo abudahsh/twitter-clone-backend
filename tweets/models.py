@@ -7,7 +7,7 @@ from profiles.models import Profile
 class Tweet(models.Model):
     created_by=models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='tweets')
     body=models.TextField(max_length=300)
-    media=models.ImageField(null=True, blank=True, )
+    media=models.URLField(null=True, blank=True, )
     is_liked=models.BooleanField(default=False)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)

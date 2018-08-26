@@ -13,10 +13,10 @@ class Profile(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     username=models.CharField(max_length=70,)
     nickname=models.CharField(max_length=120)
-    picture=models.ImageField(null=True, blank=True)
+    picture=models.URLField(null=True, blank=True)
     bio=models.TextField(null=True, blank=True)
     birthday=models.DateField(null=True, blank=True)
-    cover=models.ImageField(null=True, blank=True)
+    cover=models.URLField(null=True, blank=True)
     follows = models.ManyToManyField('Profile', related_name='followed_by',  blank=True)
 
     def __str__(self):

@@ -11,8 +11,7 @@ class TweetSerializer(serializers.ModelSerializer):
         return obj.created_by.nickname  
     def get_profile_pic(self, obj):
         """Gets the picture's url then append it to the localhost ip to give absolute url"""
-        request = self.context.get('request')
-        return request.build_absolute_uri(obj.created_by.picture.url)
+        return obj.created_by.picture
     class Meta:
         model = Tweet
         fields=['id','creator', 'nick_name','profile_pic','body', 'media', 'created_at']
